@@ -6,12 +6,14 @@ export const StyledAddStopwatch = styled.form`
   margin-bottom: 40px;
   .input__wrapper {
     width: 600px;
+    max-width: 100%;
     position: relative;
 
     input {
       border: 1px solid #000;
       border-radius: 30px;
       width: 600px;
+      max-width: 100%;
       height: 40px;
       padding: 10px 50px 10px 15px;
       outline: none;

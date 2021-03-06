@@ -8,6 +8,18 @@ export const StyledStopwatch = styled.div`
   .name {
     line-height: 1.5;
     max-width: 350px;
+
+    @media (max-width: 650px) {
+      max-width: 300px;
+    }
+
+    @media (max-width: 550px) {
+      max-width: 200px;
+    }
+
+    @media (max-width: 450px) {
+      max-width: 120px;
+    }
   }
 
   .time {
@@ -17,10 +29,14 @@ export const StyledStopwatch = styled.div`
   .resume,
   .stop {
     font-size: 25px;
-    fill: #2A2424;
+    fill: #2a2424;
     margin-left: 20px;
     transition: 0.3s;
     cursor: pointer;
+
+    @media (max-width: 450px) {
+      margin-left: 10px;
+    }
 
     &:hover {
       fill: #000;
@@ -33,6 +49,10 @@ export const StyledStopwatch = styled.div`
     margin-left: 10px;
     transition: 0.3s;
     cursor: pointer;
+
+    @media (max-width: 450px) {
+      margin-left: 5px;
+    }
 
     &:hover {
       fill: tomato;

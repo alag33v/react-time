@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 import { addNewStopwatch } from '../redux/ducks/timeDucks';
+import { AiFillPlayCircle } from 'react-icons/ai';
 import { StyledAddStopwatch } from '../styles/components/StyledAddStopwatch';
 
 const AddStopwatch = () => {
@@ -32,7 +33,7 @@ const AddStopwatch = () => {
           value={trackName}
         />
         <button type='submit'>
-          Add
+          <AiFillPlayCircle className='add' />
         </button>
       </div>
     </StyledAddStopwatch>

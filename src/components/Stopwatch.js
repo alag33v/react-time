@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { resumeStopwatch, deleteStopwatch } from '../redux/ducks/timeDucks';
+import {
+  AiFillPlayCircle,
+  AiFillPauseCircle,
+  AiOutlineMinusCircle
+} from 'react-icons/ai';
 import { StyledStopwatch } from '../styles/components/StyledStopwatch';
 
 const Stopwatch = ({ id, title, savedTime, isActive }) => {
@@ -52,17 +57,11 @@ const Stopwatch = ({ id, title, savedTime, isActive }) => {
       </div>
       <div>
         {isActive ? (
-          <button className='stop' onClick={onResume}>
-            Stop
-          </button>
+          <AiFillPauseCircle className='stop' onClick={onResume} />
         ) : (
-          <button className='resume' onClick={onResume}>
-            Resume
-          </button>
+          <AiFillPlayCircle className='resume' onClick={onResume} />
         )}
-        <button className='delete' onClick={onDelete}>
-          Delete
-        </button>
+        <AiOutlineMinusCircle className='delete' onClick={onDelete} />
       </div>
     </StyledStopwatch>
   );

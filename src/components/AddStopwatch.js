@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 import { addNewStopwatch } from '../redux/ducks/timeDucks';
+import { StyledAddStopwatch } from '../styles/components/StyledAddStopwatch';
 
 const AddStopwatch = () => {
   let [trackName, setTrackName] = useState('');
@@ -22,17 +23,19 @@ const AddStopwatch = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <StyledAddStopwatch onSubmit={handleSubmit}>
+      <div className='input__wrapper'>
         <input
           type='text'
           placeholder='Enter tracker name'
           onChange={e => setTrackName(e.target.value)}
           value={trackName}
         />
-        <button type='submit'>Add</button>
+        <button type='submit'>
+          Add
+        </button>
       </div>
-    </form>
+    </StyledAddStopwatch>
   );
 };
 

@@ -1,21 +1,26 @@
 import { useSelector } from 'react-redux';
 import { AddStopwatch, Stopwatch } from './components';
+import { GlobalStyle } from './styles/GlobalStyle';
+import { StyledApp } from './styles/StyledApp';
 
 const App = () => {
   let timeTracks = useSelector(state => state.time.timeTracks);
 
   return (
-    <div>
-      <h1>Tracker</h1>
-      <AddStopwatch />
-      <ul>
-        {timeTracks.map(time => (
-          <li key={time.id}>
-            <Stopwatch {...time} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <GlobalStyle />
+      <StyledApp>
+        <h1 className='title'>Tracker</h1>
+        <AddStopwatch />
+        <ul className='list'>
+          {timeTracks.map(time => (
+            <li className='item' key={time.id}>
+              <Stopwatch {...time} />
+            </li>
+          ))}
+        </ul>
+      </StyledApp>
+    </>
   );
 };
 
